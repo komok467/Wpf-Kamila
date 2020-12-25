@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище dbAgriculturalWorkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegistrationDate" Type="time" Precision="7" Nullable="false" />
+    <Property Name="View" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AmountWorker" Type="int" Nullable="false" />
+    <Property Name="MainView" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CuttingEdge" Type="bit" Nullable="false" />
+    <Property Name="Profit" Type="money" Nullable="false" />
+    <Property Name="Note" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Company" Type="int" />
+    <Property Name="Provider" Type="int" />
+    <Property Name="Products" Type="int" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PurchasePrice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Volume" Type="float" Nullable="false" />
+    <Property Name="CostPrice" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Main_Company_Company_ID">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Main" Type="Self.Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Main">
+        <PropertyRef Name="Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Products_Products_ID">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Main" Type="Self.Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Main">
+        <PropertyRef Name="Products" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Provider_Provider_ID">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="Main" Type="Self.Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Main">
+        <PropertyRef Name="Provider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище dbAgriculturalWorkModelContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Main" EntityType="Self.Main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Main_Company_Company_ID" Association="Self.FK_Main_Company_Company_ID">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Main" EntitySet="Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Products_Products_ID" Association="Self.FK_Main_Products_Products_ID">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Main" EntitySet="Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Provider_Provider_ID" Association="Self.FK_Main_Provider_Provider_ID">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="Main" EntitySet="Main" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

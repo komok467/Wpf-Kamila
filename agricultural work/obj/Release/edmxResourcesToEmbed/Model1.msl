@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище dbAgriculturalWorkModelContainer" CdmEntityContainer="dbAgriculturalWorkEntities2">
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="View" ColumnName="View" />
+          <ScalarProperty Name="AmountWorker" ColumnName="AmountWorker" />
+          <ScalarProperty Name="MainView" ColumnName="MainView" />
+          <ScalarProperty Name="CuttingEdge" ColumnName="CuttingEdge" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Main">
+      <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Main">
+        <MappingFragment StoreEntitySet="Main">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Products" ColumnName="Products" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provider">
+      <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Provider">
+        <MappingFragment StoreEntitySet="Provider">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,4 @@
+C:\Users\Kamilla\Documents\Мур\work\obj\Debug\MainWindow.g.cs
+C:\Users\Kamilla\Documents\Мур\work\obj\Debug\App.g.cs
+C:\Users\Kamilla\Documents\Мур\work\obj\Debug\work_MarkupCompile.cache
+C:\Users\Kamilla\Documents\Мур\work\obj\Debug\work_MarkupCompile.lref

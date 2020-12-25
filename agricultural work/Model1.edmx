@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище dbAgriculturalWorkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegistrationDate" Type="time" Precision="7" Nullable="false" />
+          <Property Name="View" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AmountWorker" Type="int" Nullable="false" />
+          <Property Name="MainView" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CuttingEdge" Type="bit" Nullable="false" />
+          <Property Name="Profit" Type="money" Nullable="false" />
+          <Property Name="Note" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Main">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Company" Type="int" />
+          <Property Name="Provider" Type="int" />
+          <Property Name="Products" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PurchasePrice" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Volume" Type="float" Nullable="false" />
+          <Property Name="CostPrice" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Main_Company_Company_ID">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Main" Type="Self.Main" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Main">
+              <PropertyRef Name="Company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Main_Products_Products_ID">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Main" Type="Self.Main" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Main">
+              <PropertyRef Name="Products" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Main_Provider_Provider_ID">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+          <End Role="Main" Type="Self.Main" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Main">
+              <PropertyRef Name="Provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище dbAgriculturalWorkModelContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Main" EntityType="Self.Main" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Main_Company_Company_ID" Association="Self.FK_Main_Company_Company_ID">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Main" EntitySet="Main" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Main_Products_Products_ID" Association="Self.FK_Main_Products_Products_ID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Main" EntitySet="Main" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Main_Provider_Provider_ID" Association="Self.FK_Main_Provider_Provider_ID">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="Main" EntitySet="Main" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbAgriculturalWorkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegistrationDate" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="View" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AmountWorker" Type="Int32" Nullable="false" />
+          <Property Name="MainView" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CuttingEdge" Type="Boolean" Nullable="false" />
+          <Property Name="Profit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Main" Relationship="Self.FK_Main_Company_Company_ID" FromRole="Company" ToRole="Main" />
+        </EntityType>
+        <EntityType Name="Main">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Company" Type="Int32" />
+          <Property Name="Provider" Type="Int32" />
+          <Property Name="Products" Type="Int32" />
+          <NavigationProperty Name="Company1" Relationship="Self.FK_Main_Company_Company_ID" FromRole="Main" ToRole="Company" />
+          <NavigationProperty Name="Products1" Relationship="Self.FK_Main_Products_Products_ID" FromRole="Main" ToRole="Products" />
+          <NavigationProperty Name="Provider1" Relationship="Self.FK_Main_Provider_Provider_ID" FromRole="Main" ToRole="Provider" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PurchasePrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Main" Relationship="Self.FK_Main_Products_Products_ID" FromRole="Products" ToRole="Main" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Volume" Type="Double" Nullable="false" />
+          <Property Name="CostPrice" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Main" Relationship="Self.FK_Main_Provider_Provider_ID" FromRole="Provider" ToRole="Main" />
+        </EntityType>
+        <Association Name="FK_Main_Company_Company_ID">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Main" Type="Self.Main" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Main">
+              <PropertyRef Name="Company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Main_Products_Products_ID">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="Main" Type="Self.Main" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Main">
+              <PropertyRef Name="Products" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Main_Provider_Provider_ID">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+          <End Role="Main" Type="Self.Main" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Main">
+              <PropertyRef Name="Provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbAgriculturalWorkEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Company" EntityType="Self.Company" />
+          <EntitySet Name="Main" EntityType="Self.Main" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" />
+          <AssociationSet Name="FK_Main_Company_Company_ID" Association="Self.FK_Main_Company_Company_ID">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Main" EntitySet="Main" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Main_Products_Products_ID" Association="Self.FK_Main_Products_Products_ID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Main" EntitySet="Main" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Main_Provider_Provider_ID" Association="Self.FK_Main_Provider_Provider_ID">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="Main" EntitySet="Main" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище dbAgriculturalWorkModelContainer" CdmEntityContainer="dbAgriculturalWorkEntities2">
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="AmountWorker" ColumnName="AmountWorker" />
+                <ScalarProperty Name="MainView" ColumnName="MainView" />
+                <ScalarProperty Name="CuttingEdge" ColumnName="CuttingEdge" />
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Main">
+            <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Main">
+              <MappingFragment StoreEntitySet="Main">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="Products" ColumnName="Products" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provider">
+            <EntityTypeMapping TypeName="dbAgriculturalWorkModel.Provider">
+              <MappingFragment StoreEntitySet="Provider">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

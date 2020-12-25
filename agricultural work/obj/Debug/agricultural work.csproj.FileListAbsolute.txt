@@ -1,0 +1,21 @@
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\agricultural work.exe.config
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\agricultural work.exe
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\agricultural work.pdb
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\EntityFramework.dll
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\EntityFramework.xml
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\MainWindow.g.cs
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\App.g.cs
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work_Content.g.cs
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work_MarkupCompile.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work_MarkupCompile.lref
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\MainWindow.baml
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work.g.resources
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural_work.Properties.Resources.resources
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work.csproj.GenerateResource.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work.csproj.CoreCompileInputs.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work.csproj.CopyComplete
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work.exe
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Debug\agricultural work.pdb

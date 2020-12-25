@@ -1,0 +1,22 @@
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.csprojAssemblyReference.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\MainWindow.g.cs
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\App.g.cs
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work_Content.g.cs
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work_MarkupCompile.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work_MarkupCompile.lref
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\agricultural work.exe.config
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\agricultural work.exe
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\agricultural work.pdb
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\EntityFramework.dll
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\EntityFramework.xml
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Kamilla\Documents\Мур\agricultural work\bin\Release\ru\EntityFramework.resources.dll
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\MainWindow.baml
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.g.resources
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural_work.Properties.Resources.resources
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.csproj.GenerateResource.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.csproj.CoreCompileInputs.cache
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.csproj.CopyComplete
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.exe
+C:\Users\Kamilla\Documents\Мур\agricultural work\obj\Release\agricultural work.pdb
